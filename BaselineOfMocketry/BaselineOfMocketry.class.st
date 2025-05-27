@@ -1,10 +1,11 @@
 Class {
-	#name : #BaselineOfMocketry,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfMocketry
+	#name : 'BaselineOfMocketry',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfMocketry',
+	#package : 'BaselineOfMocketry'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfMocketry >> baseline: spec [
 	<baseline>
 	
@@ -17,7 +18,7 @@ BaselineOfMocketry >> baseline: spec [
 		 	    spec	loads: #('Tests' 'GhostSupportTests' )];	
 				
 			baseline: 'Ghost' with: [
-		 	    spec repository: 'github://pharo-ide/Ghost:v6.0.2'];
+		 	    spec repository: 'github://JanBliznicenko/Ghost'];
 			project: 'GhostCore' copyFrom: 'Ghost' with: [
 		 	    spec	loads: #('ObjectGhost' 'ToolsSupport' 'ObjectMutation')];
 			project: 'GhostTests' copyFrom: 'Ghost' with: [
@@ -35,7 +36,7 @@ BaselineOfMocketry >> baseline: spec [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BaselineOfMocketry >> projectClass [
 	^ [ self class environment at: #MetacelloCypressBaselineProject ]
 		on: NotFound
